@@ -2,6 +2,9 @@
 
 Desafio da WaProject
 
+A documentação é inicializada com o swagger junto com api no endponint: ```
+http://localhost:3000/api```
+
 ## Instalação
 
 ```bash
