@@ -21,6 +21,7 @@ export class LaboratorioServico {
   async criar(
     adicionarLaboratorioDtos: AdicionarLaboratorioDto[],
   ): Promise<LaboratorioEntidade[]> {
+    // adicionar
     adicionarLaboratorioDtos.forEach((valor) => delete valor['id']);
     return this.repositorioDoLaboratorio.save(adicionarLaboratorioDtos);
   }
