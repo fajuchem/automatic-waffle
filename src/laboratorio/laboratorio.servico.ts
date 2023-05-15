@@ -26,6 +26,13 @@ export class LaboratorioServico {
     return this.repositorioDoLaboratorio.save(adicionarLaboratorioDtos);
   }
 
+  async criarComLog(
+    adicionarLaboratorioDtos: AdicionarLaboratorioDto[],
+  ): Promise<LaboratorioEntidade[]> {
+    console.log('Criando laboratório');
+    return this.criar(adicionarLaboratorioDtos);
+  }
+
   async consultar(): Promise<LaboratorioEntidade[]> {
     return this.repositorioDoLaboratorio.find();
   }
