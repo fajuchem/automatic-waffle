@@ -1,14 +1,13 @@
 import { getFromDb } from './get-from-db';
 
 export function getMovies() {
-  const movies = getFromDb();
+  const movies = getFromDb('movies');
 
-  return {
-    movies,
-    moviesByGenre: getMoviesByGenre(),
-  };
+  return movies;
 }
 
-export function getMoviesByGenre() {
-  return 100;
+export function getMoviesGenre() {
+  return {
+    genre: getMovies().data.map((movie) => movie.genre),
+  };
 }

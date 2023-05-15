@@ -1,24 +1,25 @@
 import { getFromDb } from './get-from-db';
 
 export function getUsers() {
-  const users = getFromDb();
+  const users = getFromDb('users');
 
-  return {
-    users,
-    active: getActiveUsers(),
-    inactive: getInactiveUsers(),
-    gender: getUsersByGender(),
-  };
+  return users;
 }
 
 export function getActiveUsers() {
-  return 100;
+  return {
+    active: getUsers().data.filter((user) => user.active),
+  };
 }
 
 export function getInactiveUsers() {
-  return 300;
+  return {
+    inactive: getUsers().data.filter((user) => !user.active),
+  };
 }
 
 export function getUsersByGender() {
-  return 200;
+  return {
+    gender: getUsers().data.filter((user) => user.gender),
+  };
 }
